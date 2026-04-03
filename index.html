@@ -1,359 +1,1016 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CBI — Career Bureau of Investigations | Open Your Case</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shavon Gaddie — Revenue Cycle Leader</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Georgia,serif;background:#080808;color:#fff;line-height:1.6}
+  :root {
+    --rose-gold: #C9A87C;
+    --rose-mid: #D9BC98;
+    --rose-dark: #A07848;
+    --rose-pale: #F0E6D8;
+    --dark: #0D0F12;
+    --dark-mid: #1A1D22;
+    --dark-card: #22262D;
+    --dark-sidebar: #2A2E35;
+    --white: #FFFFFF;
+    --off-white: #F8F4F0;
+    --ink: #1A1A1A;
+    --mid: #888888;
+    --light: #BBAFA8;
+  }
 
-/* NAV */
-nav{background:#080808;padding:18px 32px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(201,168,76,0.15);position:sticky;top:0;z-index:100}
-.logo{font-size:20pt;font-weight:700;color:#fff;letter-spacing:2px;text-decoration:none}
-.logo span{color:#C9A84C}
-.nav-right{font-size:7.5pt;letter-spacing:2px;text-transform:uppercase;color:rgba(201,168,76,0.5);font-family:Arial,sans-serif}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* HERO */
-.hero{background:#080808;padding:90px 32px 80px;text-align:center;position:relative;overflow:hidden}
-.hero-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,0.06) 0%,transparent 65%);pointer-events:none}
-.hero-content{position:relative;z-index:1}
-.hero-eyebrow{font-size:7.5pt;letter-spacing:5px;text-transform:uppercase;color:#C9A84C;font-family:Arial,sans-serif;margin-bottom:20px}
-.hero-title{font-size:clamp(28pt,8vw,52pt);font-weight:700;line-height:1;margin-bottom:16px;color:#fff}
-.hero-title .gold{color:#C9A84C;font-style:italic}
-.hero-rule{width:60px;height:1px;background:linear-gradient(to right,transparent,#C9A84C,transparent);margin:24px auto}
-.hero-tagline{font-size:13pt;font-style:italic;color:rgba(255,255,255,0.45);margin-bottom:40px}
-.hero-tagline strong{color:#C9A84C;font-style:normal}
-.hero-btn{display:inline-block;background:#C9A84C;color:#080808;padding:16px 44px;font-size:8.5pt;letter-spacing:3px;text-transform:uppercase;text-decoration:none;font-family:Arial,sans-serif;font-weight:700;transition:background 0.2s}
-.hero-btn:hover{background:#E8C97A}
+  html { scroll-behavior: smooth; }
 
-/* GOLD BAR */
-.gold-bar{height:5px;background:linear-gradient(to right,#8A6E2A,#C9A84C,#E8C97A,#C9A84C,#8A6E2A)}
+  body {
+    background: var(--dark);
+    color: var(--off-white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
 
-/* STATS BAND */
-.stats-band{background:#0D0D0D;padding:0 32px;display:flex;justify-content:center;border-bottom:1px solid rgba(201,168,76,0.08)}
-.stat-item{padding:24px 32px;text-align:center;border-right:1px solid rgba(201,168,76,0.08)}
-.stat-item:last-child{border-right:none}
-.stat-num{font-size:18pt;font-weight:700;color:#C9A84C;line-height:1;margin-bottom:4px}
-.stat-lbl{font-size:7pt;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.25);font-family:Arial,sans-serif;line-height:1.4}
+  /* ── NOISE TEXTURE OVERLAY ─────────────────────────────────────── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
 
-/* SERVICES */
-.services{background:#0D0D0D;padding:64px 32px}
-.section-eyebrow{font-size:7.5pt;letter-spacing:4px;text-transform:uppercase;color:#C9A84C;font-family:Arial,sans-serif;margin-bottom:12px}
-.section-title{font-size:22pt;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.1}
-.section-sub{font-size:10.5pt;font-style:italic;color:rgba(255,255,255,0.35);margin-bottom:36px}
-.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(201,168,76,0.08)}
-.service-card{background:#0D0D0D;padding:24px 20px;border-top:2px solid transparent;transition:border-color 0.2s,background 0.2s}
-.service-card:hover{border-top-color:#C9A84C;background:#111}
-.service-num{font-size:18pt;font-weight:700;color:rgba(201,168,76,0.7);line-height:1;margin-bottom:8px}
-.service-title{font-size:11pt;font-weight:700;color:#fff;margin-bottom:6px}
-.service-desc{font-size:9.5pt;color:rgba(255,255,255,0.35);line-height:1.6;font-style:italic}
+  /* ── HERO ──────────────────────────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
 
-/* FORM SECTION */
-.form-section{background:#111;padding:64px 32px}
-.form-intro{margin-bottom:36px}
-.form-box{background:#0D0D0D;border-top:3px solid #C9A84C;padding:36px 28px;max-width:680px;margin:0 auto}
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201,168,124,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 10% 80%, rgba(160,120,72,0.06) 0%, transparent 50%),
+      linear-gradient(135deg, #0D0F12 0%, #161920 50%, #0D0F12 100%);
+  }
 
-/* FORM FIELDS */
-.form-group{margin-bottom:18px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px}
-label{display:block;font-size:7.5pt;letter-spacing:2px;text-transform:uppercase;color:#C9A84C;font-family:Arial,sans-serif;margin-bottom:6px}
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select,
-textarea{width:100%;padding:12px 14px;background:#1A1A1A;border:1px solid rgba(201,168,76,0.2);color:#fff;font-family:Georgia,serif;font-size:10pt;outline:none;transition:border-color 0.2s;-webkit-appearance:none;border-radius:0}
-input:focus,select:focus,textarea:focus{border-color:#C9A84C}
-input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.2);font-style:italic}
-select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C9A84C' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-color:#1A1A1A;padding-right:36px}
-select option{background:#1A1A1A;color:#fff}
-textarea{resize:vertical;min-height:100px}
+  .hero-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+  }
 
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
 
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
 
-/* SUBMIT */
-.submit-area{margin-top:24px;text-align:center}
-.submit-note{font-size:8pt;color:rgba(255,255,255,0.25);font-style:italic;margin-bottom:16px;font-family:Arial,sans-serif}
-.submit-btn{background:#C9A84C;color:#080808;padding:16px 56px;font-size:8.5pt;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;font-family:Arial,sans-serif;font-weight:700;width:100%;transition:background 0.2s}
-.submit-btn:hover{background:#E8C97A}
-.trust-row{display:flex;justify-content:center;gap:24px;margin-top:16px;flex-wrap:wrap}
-.trust-item{font-size:7.5pt;color:rgba(255,255,255,0.2);font-family:Arial,sans-serif;font-style:italic}
+  .hero-left { animation: fadeSlideUp 1s ease forwards; opacity: 0; }
+  .hero-right { animation: fadeSlideUp 1s ease 0.3s forwards; opacity: 0; }
 
-/* SUCCESS */
-.success-msg{display:none;text-align:center;padding:48px 24px}
-.success-msg.show{display:block}
-.success-title{font-size:22pt;font-weight:700;color:#fff;margin-bottom:12px}
-.success-title span{color:#C9A84C;font-style:italic}
-.success-rule{width:48px;height:1px;background:#C9A84C;margin:16px auto}
-.success-text{font-size:11pt;font-style:italic;color:rgba(255,255,255,0.45);line-height:1.7;max-width:480px;margin:0 auto}
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-/* FOOTER */
-footer{background:#050505;padding:20px 32px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(201,168,76,0.08);flex-wrap:wrap;gap:8px}
-.footer-left{font-size:7.5pt;color:rgba(255,255,255,0.2);font-family:Arial,sans-serif}
-.footer-right{font-size:7.5pt;color:rgba(201,168,76,0.35);font-style:italic}
+  .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--rose-gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 
-/* MOBILE */
-@media(max-width:600px){
-  .stats-band{flex-wrap:wrap}
-  .stat-item{flex:1 1 50%;border-right:none;border-bottom:1px solid rgba(201,168,76,0.08);padding:18px 16px}
-  .services-grid{grid-template-columns:1fr}
-  .form-row{grid-template-columns:1fr}
-  .trust-row{gap:12px}
-  footer{flex-direction:column;text-align:center}
-}
+  .eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--rose-gold);
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 6vw, 80px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .hero-name span {
+    color: var(--rose-gold);
+    font-style: italic;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--rose-mid);
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+  }
+
+  .hero-tagline {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--light);
+    line-height: 1.8;
+    max-width: 420px;
+    margin-bottom: 48px;
+    border-left: 2px solid var(--rose-gold);
+    padding-left: 20px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: var(--rose-gold);
+    color: var(--dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background: var(--rose-mid);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    border: 1px solid rgba(201,168,124,0.4);
+    color: var(--rose-gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--rose-gold);
+    background: rgba(201,168,124,0.08);
+    transform: translateY(-2px);
+  }
+
+  /* Metrics cards */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .metric-card {
+    background: var(--dark-card);
+    border: 1px solid rgba(201,168,124,0.12);
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: fadeSlideUp 1s ease forwards;
+    opacity: 0;
+  }
+
+  .metric-card:nth-child(1) { animation-delay: 0.5s; }
+  .metric-card:nth-child(2) { animation-delay: 0.65s; }
+  .metric-card:nth-child(3) { animation-delay: 0.8s; }
+  .metric-card:nth-child(4) { animation-delay: 0.95s; }
+
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--rose-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .metric-card:hover { border-color: rgba(201,168,124,0.3); transform: translateY(-4px); }
+  .metric-card:hover::before { transform: scaleX(1); }
+
+  .metric-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--rose-gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .metric-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light);
+  }
+
+  /* ── NAV ───────────────────────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 24px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(13,15,18,0.95) 0%, transparent 100%);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+
+  .nav-logo span { color: var(--rose-gold); font-style: italic; }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--rose-gold); }
+
+  /* ── SECTIONS ──────────────────────────────────────────────────── */
+  section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 60px;
+  }
+
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: var(--rose-gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--rose-gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 60px;
+  }
+
+  .section-title em {
+    color: var(--rose-gold);
+    font-style: italic;
+  }
+
+  /* ── ABOUT ─────────────────────────────────────────────────────── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--light);
+    margin-bottom: 20px;
+  }
+
+  .about-text p strong {
+    color: var(--rose-mid);
+    font-weight: 500;
+  }
+
+  .about-divider {
+    width: 48px;
+    height: 1px;
+    background: var(--rose-gold);
+    margin: 32px 0;
+  }
+
+  /* Certifications */
+  .cert-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cert-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px;
+    background: var(--dark-card);
+    border: 1px solid rgba(201,168,124,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .cert-item:hover {
+    border-color: rgba(201,168,124,0.3);
+    transform: translateX(4px);
+  }
+
+  .cert-badge {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--rose-dark), var(--rose-gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+    flex-shrink: 0;
+  }
+
+  .cert-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--off-white);
+    margin-bottom: 4px;
+  }
+
+  .cert-org {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--rose-gold);
+    text-transform: uppercase;
+  }
+
+  /* ── EXPERTISE ─────────────────────────────────────────────────── */
+  .expertise-section {
+    background: var(--dark-mid);
+    max-width: 100%;
+    padding: 100px 0;
+  }
+
+  .expertise-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+  }
+
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(201,168,124,0.1);
+  }
+
+  .expertise-item {
+    background: var(--dark-mid);
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .expertise-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--rose-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .expertise-item:hover { background: var(--dark-card); }
+  .expertise-item:hover::after { transform: scaleX(1); }
+
+  .expertise-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .expertise-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .expertise-desc {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--mid);
+  }
+
+  /* ── SKILLS ────────────────────────────────────────────────────── */
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skill-tag {
+    padding: 8px 18px;
+    border: 1px solid rgba(201,168,124,0.2);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--light);
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  .skill-tag:hover {
+    border-color: var(--rose-gold);
+    color: var(--rose-gold);
+    background: rgba(201,168,124,0.06);
+  }
+
+  /* ── CONTACT ───────────────────────────────────────────────────── */
+  .contact-section {
+    background: var(--dark-sidebar);
+    max-width: 100%;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
+  }
+
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(201,168,124,0.1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .contact-item:hover {
+    border-color: rgba(201,168,124,0.4);
+    background: rgba(201,168,124,0.05);
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(201,168,124,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .contact-detail {
+    flex: 1;
+  }
+
+  .contact-label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+    margin-bottom: 4px;
+  }
+
+  .contact-value {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--off-white);
+  }
+
+  /* Contact form */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(201,168,124,0.15);
+    padding: 14px 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--off-white);
+    outline: none;
+    transition: border-color 0.3s ease;
+    resize: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: rgba(201,168,124,0.5);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(187,175,168,0.4);
+  }
+
+  .form-submit {
+    padding: 16px 40px;
+    background: var(--rose-gold);
+    color: var(--dark);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover {
+    background: var(--rose-mid);
+    transform: translateY(-2px);
+  }
+
+  /* ── FOOTER ────────────────────────────────────────────────────── */
+  footer {
+    background: var(--dark);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(201,168,124,0.1);
+  }
+
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--light);
+  }
+
+  .footer-name span { color: var(--rose-gold); }
+
+  .footer-copy {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: rgba(187,175,168,0.4);
+  }
+
+  /* ── DIVIDER LINE ──────────────────────────────────────────────── */
+  .full-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,124,0.3), transparent);
+    margin: 0;
+  }
+
+  /* ── SCROLL REVEAL ─────────────────────────────────────────────── */
+  .reveal {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    nav { padding: 20px 30px; }
+    .nav-links { display: none; }
+    .hero-content { grid-template-columns: 1fr; gap: 60px; padding: 100px 30px 60px; }
+    section { padding: 70px 30px; }
+    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .expertise-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 30px; }
+    .expertise-inner { padding: 0 30px; }
+    .contact-inner { padding: 0 30px; }
+  }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">CBI<span>.</span></a>
-  <div class="nav-right">Career Bureau of Investigations</div>
+  <a href="#" class="nav-logo">Shavon <span>Gaddie</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-glow"></div>
+  <div class="hero-line"></div>
+  <div class="hero-bg"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Career Bureau of Investigations</div>
-    <h1 class="hero-title">Every Career Has<br/><span class="gold">Evidence.</span><br/>We Find It.</h1>
-    <div class="hero-rule"></div>
-    <p class="hero-tagline">We build the case. <strong>You close the deal.</strong></p>
-    <a href="#intake" class="hero-btn">Open Your Case</a>
-  </div>
-</div>
-
-<div class="gold-bar"></div>
-
-<!-- STATS BAND -->
-<div class="stats-band">
-  <div class="stat-item">
-    <div class="stat-num">15+</div>
-    <div class="stat-lbl">Years Career<br/>Development</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">24 Hrs</div>
-    <div class="stat-lbl">Investigator<br/>Response Time</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">3–5</div>
-    <div class="stat-lbl">Days to Case<br/>File Delivery</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">Case</div>
-    <div class="stat-lbl">Closed. Full Stop.<br/>We Do Not Stop Until You Land</div>
-  </div>
-</div>
-
-<div class="gold-bar"></div>
-
-<!-- SERVICES -->
-<div class="services">
-  <div class="section-eyebrow">What We Do</div>
-  <h2 class="section-title">The Case File Services</h2>
-  <p class="section-sub">Everything you need to walk into any room as the candidate they cannot overlook.</p>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-num">01</div>
-      <div class="service-title">Resume Rewrite and Transformation</div>
-      <p class="service-desc">Your resume rebuilt from the ground up. New design, new positioning, your experience rewritten to show what you actually accomplished.</p>
+    <div class="hero-left">
+      <div class="eyebrow">Revenue Cycle Leadership</div>
+      <h1 class="hero-name">Shavon<br><span>Gaddie</span></h1>
+      <p class="hero-title">Healthcare Revenue Optimization Engineer</p>
+      <p class="hero-tagline">
+        Engineering the systems that protect revenue.<br>
+        Building the teams that sustain it.<br><br>
+        15+ years transforming denial prevention from reactive cost center to strategic, revenue-protecting infrastructure across major health systems nationwide.
+      </p>
+      <div class="hero-cta">
+        <a href="/cdn-cgi/l/email-protection#3b68535a4d5455154f535e157c5a5f5f525e7b5c565a525715585456" class="btn-primary">Get In Touch</a>
+        <a href="#about" class="btn-secondary">Learn More</a>
+      </div>
     </div>
-    <div class="service-card">
-      <div class="service-num">02</div>
-      <div class="service-title">Personal Brand Development</div>
-      <p class="service-desc">Your professional identity built with intention. A complete package that makes you recognizable and unforgettable before you say a word.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-num">03</div>
-      <div class="service-title">Interview Preparation Arsenal</div>
-      <p class="service-desc">From the callback to the final round. Every phase covered so you walk in prepared, confident, and ready to close.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-num">04</div>
-      <div class="service-title">LinkedIn Profile Build Out</div>
-      <p class="service-desc">Your LinkedIn rebuilt to match your brand and attract the right opportunities. We make sure the right people find you.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-num">05</div>
-      <div class="service-title">Career Strategy and Direction</div>
-      <p class="service-desc">Not sure what is next? We build a roadmap that makes your next move intentional — not accidental.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-num">06</div>
-      <div class="service-title">Brand Video and Trailer</div>
-      <p class="service-desc">A cinematic personal brand video that tells your career story in under 60 seconds. Nobody else is doing this.</p>
+    <div class="hero-right">
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-number">15+</div>
+          <div class="metric-label">Years Experience</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">18%</div>
+          <div class="metric-label">Denial Reduction</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">30%</div>
+          <div class="metric-label">Workflow Efficiency</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">25%</div>
+          <div class="metric-label">Claims Resolution</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="gold-bar"></div>
+<div class="full-divider"></div>
 
-<!-- INTAKE FORM -->
-<div class="form-section" id="intake">
-  <div class="form-intro">
-    <div class="section-eyebrow">Start Here</div>
-    <h2 class="section-title">Open Your Case</h2>
-    <p class="section-sub">Complete the form below and a CBI investigator will be in touch within 24 hours.</p>
-  </div>
-
-  <div class="form-box">
-
-    <form id="cbiForm" action="https://formspree.io/f/xreoyeee" method="POST">
-      <input type="hidden" name="_subject" value="New CBI Case Opened"/>
-      <input type="hidden" name="_next" value="https://cbi-careers.github.io/?submitted=true"/>
-
-      <!-- Name -->
-      <div class="form-row">
-        <div class="form-group">
-          <label>First Name *</label>
-          <input type="text" name="firstName" placeholder="Your first name" required/>
-        </div>
-        <div class="form-group">
-          <label>Last Name *</label>
-          <input type="text" name="lastName" placeholder="Your last name" required/>
-        </div>
-      </div>
-
-      <!-- Contact -->
-      <div class="form-row">
-        <div class="form-group">
-          <label>Phone Number *</label>
-          <input type="tel" name="phone" placeholder="(000) 000-0000" required/>
-        </div>
-        <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" name="email" placeholder="your@email.com" required/>
-        </div>
-      </div>
-
-      <!-- Location and Contact Method -->
-      <div class="form-row">
-        <div class="form-group">
-          <label>City and State *</label>
-          <input type="text" name="location" placeholder="City, State" required/>
-        </div>
-        <div class="form-group">
-          <label>Preferred Contact *</label>
-          <select name="contactMethod" required>
-            <option value="" disabled selected>Select one</option>
-            <option>Text Message</option>
-            <option>Email</option>
-            <option>Phone Call</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Target Role and Timeline -->
-      <div class="form-row">
-        <div class="form-group">
-          <label>Target Role *</label>
-          <input type="text" name="targetRole" placeholder="e.g. Operations Manager, RN, IT Director" required/>
-        </div>
-        <div class="form-group">
-          <label>How Soon Are You Looking? *</label>
-          <select name="timeline" required>
-            <option value="" disabled selected>Select one</option>
-            <option>Immediately — I need this now</option>
-            <option>Within 30 days</option>
-            <option>Within 60 to 90 days</option>
-            <option>Just exploring for now</option>
-          </select>
-        </div>
-      </div>
-
-      <!-- Accomplishments -->
-      <div class="form-group">
-        <label>Top Accomplishments * — include numbers if you have them</label>
-        <textarea name="accomplishments" placeholder="Example: Reduced denials by 18%&#10;Example: Managed a team of 12&#10;Example: Reconciled $200K weekly&#10;&#10;List 3 to 5 — do not worry about wording" required></textarea>
-      </div>
-
-      <!-- What is holding you back -->
-      <div class="form-group">
-        <label>What Is Holding You Back?</label>
-        <textarea name="holdingBack" placeholder="Resume quality, certifications, confidence, employment gap — we have seen it all and we are here to help" style="min-height:80px"></textarea>
-      </div>
-
-      <!-- How did you hear -->
-      <div class="form-row">
-        <div class="form-group">
-          <label>How Did You Find CBI?</label>
-          <select name="referralSource">
-            <option value="" disabled selected>Select one</option>
-            <option>Instagram</option>
-            <option>TikTok</option>
-            <option>LinkedIn</option>
-            <option>Facebook</option>
-            <option>Word of Mouth</option>
-            <option>Google Search</option>
-            <option>Serve Day</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Referred By</label>
-          <input type="text" name="referredBy" placeholder="First and last name"/>
-        </div>
-      </div>
-
-      <!-- Resume Paste -->
-      <div class="form-group">
-        <label>Paste Your Resume Here</label>
-        <textarea name="resume" placeholder="Copy and paste the text from your current resume here. A rough draft or old version is perfectly fine — we will take it from there." style="min-height:160px"></textarea>
-      </div>
-
-      <!-- Submit -->
-      <div class="submit-area">
-        <p class="submit-note">By submitting this form you agree that CBI may contact you. All information is confidential and never sold or shared.</p>
-        <button type="submit" class="submit-btn">Open My Case</button>
-        <div class="trust-row">
-          <span class="trust-item">Strictly Confidential</span>
-          <span class="trust-item">Files Never Shared Without Permission</span>
-          <span class="trust-item">24 Hour Response</span>
-        </div>
-      </div>
-
-    </form>
-
-    <!-- Success Message -->
-    <div class="success-msg" id="successMsg">
-      <div class="success-title">Case <span>Opened.</span></div>
-      <div class="success-rule"></div>
-      <p class="success-text">Your information has been received and your case is officially open. A CBI investigator will be in touch within 24 hours to begin your transformation.</p>
-      <br/>
-      <p style="font-size:9pt;color:rgba(201,168,76,0.4);font-style:italic;">These are their stories.</p>
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-eyebrow">About</div>
+  <h2 class="section-title">A rare combination of<br><em>clinical, operational,</em><br>and strategic expertise</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        A strategic thinker who builds and optimizes denial prevention infrastructure from the ground up, translating complex payer dynamics into clear strategy and protecting revenue at enterprise scale.
+      </p>
+      <p>
+        Moving organizations from <strong>reactive to strategic</strong> through a rare combination of clinical knowledge, operational expertise, and financial acuity. Committed to excellence, building elite teams, and developing high-performing talent.
+      </p>
+      <div class="about-divider"></div>
+      <div class="section-eyebrow" style="margin-bottom: 16px; margin-top: 0;">Currently</div>
+      <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: var(--light); line-height: 1.6;">
+          <span style="color: var(--rose-gold); margin-top: 2px; flex-shrink: 0;">◆</span>
+          Pursuing EHRC designation through HFMA
+        </li>
+        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: var(--light); line-height: 1.6;">
+          <span style="color: var(--rose-gold); margin-top: 2px; flex-shrink: 0;">◆</span>
+          Advancing AI governance practices in healthcare revenue cycle
+        </li>
+        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: var(--light); line-height: 1.6;">
+          <span style="color: var(--rose-gold); margin-top: 2px; flex-shrink: 0;">◆</span>
+          Open to Director-level revenue cycle opportunities nationwide
+        </li>
+      </ul>
     </div>
+    <div class="reveal">
+      <div class="section-eyebrow" style="margin-bottom: 24px;">HFMA Certifications</div>
+      <div class="cert-list">
+        <div class="cert-item">
+          <div class="cert-badge">CHFP</div>
+          <div>
+            <div class="cert-name">Certified Healthcare Financial Professional</div>
+            <div class="cert-org">HFMA</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge">CRCR</div>
+          <div>
+            <div class="cert-name">Certified Revenue Cycle Representative</div>
+            <div class="cert-org">HFMA</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge">CSPR</div>
+          <div>
+            <div class="cert-name">Certified Specialist Physician Revenue Cycle</div>
+            <div class="cert-org">HFMA</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge">CSBI</div>
+          <div>
+            <div class="cert-name">Certified Specialist Business Intelligence</div>
+            <div class="cert-org">HFMA</div>
+          </div>
+        </div>
+      </div>
 
+      <div class="section-eyebrow" style="margin-bottom: 24px; margin-top: 36px;">Education</div>
+      <div class="cert-list">
+        <div class="cert-item">
+          <div class="cert-badge" style="font-size: 8px;">MS</div>
+          <div>
+            <div class="cert-name">Master of Science, Organizational Leadership</div>
+            <div class="cert-org">Graduate Degree</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-badge" style="font-size: 8px;">BS</div>
+          <div>
+            <div class="cert-name">Bachelor of Science, Organizational Management</div>
+            <div class="cert-org">Undergraduate Degree</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- EXPERTISE -->
+<div class="expertise-section" id="expertise">
+  <div class="expertise-inner">
+    <div class="section-eyebrow reveal">Core Expertise</div>
+    <h2 class="section-title reveal">What <em>I do</em></h2>
+    <div class="expertise-grid">
+      <div class="expertise-item reveal">
+        <div class="expertise-icon">◆</div>
+        <div class="expertise-title">Denial Prevention Infrastructure</div>
+        <p class="expertise-desc">Architect enterprise-level denial prevention systems from the ground up. Author of appeal playbooks and payer-specific legal templates used across multi-hospital systems. Maintain living repositories of payer medical policies to support complex medical necessity arguments.</p>
+      </div>
+      <div class="expertise-item reveal">
+        <div class="expertise-icon">◆</div>
+        <div class="expertise-title">AI-Powered Clinical Appeals</div>
+        <p class="expertise-desc">Designated super user for enterprise AI-powered clinical appeals implementation. Established data governance protocols and human-in-the-loop oversight models. Reduced chart review time by 35% and improved denial overturn rates by 15%.</p>
+      </div>
+      <div class="expertise-item reveal">
+        <div class="expertise-icon">◆</div>
+        <div class="expertise-title">External Review and IRO Oversight</div>
+        <p class="expertise-desc">Developed Independent Review Organization framework including contractor selection protocols. Oversee IRO submission replies and trend determination outcomes against internal payer processing and initial denial rates to identify systemic payer behavior patterns.</p>
+      </div>
+      <div class="expertise-item reveal">
+        <div class="expertise-icon">◆</div>
+        <div class="expertise-title">Revenue Cycle Transformation</div>
+        <p class="expertise-desc">15+ years moving organizations from reactive to strategic across national health systems. Track record delivering 18% denial reduction, 20% faster reimbursement timelines, and 30% workflow efficiency gains through data-driven process redesign.</p>
+      </div>
+      <div class="expertise-item reveal">
+        <div class="expertise-icon">◆</div>
+        <div class="expertise-title">Team Development and Leadership</div>
+        <p class="expertise-desc">Build and lead high-performing clinical denials teams. Develop training programs on appeal best practices, payer policy nuances, and AI collaboration workflows. Create cultures of proactive engagement and data-driven accountability.</p>
+      </div>
+      <div class="expertise-item reveal">
+        <div class="expertise-icon">◆</div>
+        <div class="expertise-title">Payer Strategy and Analytics</div>
+        <p class="expertise-desc">Translate complex payer dynamics into actionable operational strategy. Develop KPI frameworks from first principles, produce executive-level reporting, and identify systemic payer behavior patterns that drive managed care review.</p>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="gold-bar"></div>
+<div class="full-divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-eyebrow reveal">Competencies</div>
+  <h2 class="section-title reveal">Core <em>Skills</em></h2>
+  <div class="skills-grid reveal">
+    <div class="skill-tag">Denial Prevention and Resolution</div>
+    <div class="skill-tag">Revenue Cycle Management</div>
+    <div class="skill-tag">AI Governance and Data Oversight</div>
+    <div class="skill-tag">Human-AI Workflow Design</div>
+    <div class="skill-tag">AI-Powered Clinical Appeals</div>
+    <div class="skill-tag">Data-Driven Strategy</div>
+    <div class="skill-tag">Healthcare Compliance</div>
+    <div class="skill-tag">KPI Development and Tracking</div>
+    <div class="skill-tag">Cross-Functional Leadership</div>
+    <div class="skill-tag">InterQual and MCG Standards</div>
+    <div class="skill-tag">Root Cause Analysis</div>
+    <div class="skill-tag">Performance Benchmarking</div>
+    <div class="skill-tag">Strategic Planning and Execution</div>
+    <div class="skill-tag">Risk Assessment and Mitigation</div>
+    <div class="skill-tag">Workflow Automation</div>
+    <div class="skill-tag">Revenue Optimization</div>
+    <div class="skill-tag">Payer Contract Management</div>
+    <div class="skill-tag">Financial Impact Analysis</div>
+    <div class="skill-tag">ICD-10 and LCD/NCD Interpretation</div>
+    <div class="skill-tag">IRO Framework Development</div>
+    <div class="skill-tag">Appeal Playbook Authorship</div>
+    <div class="skill-tag">Medical Necessity Appeals</div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-eyebrow reveal">Contact</div>
+      <h2 class="section-title reveal">Let us<br><em>connect</em></h2>
+      <p class="reveal" style="font-size: 13px; font-weight: 300; color: var(--light); line-height: 1.9; max-width: 380px;">
+        Open to Director-level revenue cycle leadership opportunities, consulting engagements, and speaking on denial prevention and AI implementation in healthcare operations.
+      </p>
+      <div class="contact-info reveal">
+        <a href="tel:4049414070" class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail">
+            <div class="contact-label">Phone</div>
+            <div class="contact-value">(404) 941-4070</div>
+          </div>
+        </a>
+        <a href="/cdn-cgi/l/email-protection#47142f2631282969332f2269002623232e2207202a262e2b6924282a" class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-detail">
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><span class="__cf_email__" data-cfemail="81d2e9e0f7eeefaff5e9e4afc6e0e5e5e8e4c1e6ece0e8edafe2eeec">[email&#160;protected]</span></div>
+          </div>
+        </a>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Atlanta, GA — Remote / Nationwide</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="section-eyebrow" style="margin-bottom: 24px; margin-top: 8px;">Send a Message</div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" placeholder="How can I help?">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5" placeholder="Tell me about your opportunity or how we can work together..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-left">CBI — Career Bureau of Investigations &nbsp;|&nbsp; All information is confidential</div>
-  <div class="footer-right">We build the case. You close the deal.</div>
+  <div class="footer-name">Shavon <span>Gaddie</span></div>
+  <div class="footer-copy">&copy; 2026 Shavon Gaddie. All rights reserved.</div>
 </footer>
 
-<script>
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Form handler
+  function handleSubmit(e) {
     e.preventDefault();
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = 'Message Sent!';
+    btn.style.background = '#A07848';
+    setTimeout(() => {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
 
-// Show success message if redirected back after Formspree submission
-if (window.location.search.includes('submitted=true')) {
-  var f = document.getElementById('cbiForm');
-  var s = document.getElementById('successMsg');
-  if (f) f.style.display = 'none';
-  if (s) s.classList.add('show');
-  var intake = document.getElementById('intake');
-  if (intake) intake.scrollIntoView({ behavior: 'smooth' });
-}
-</script>
-
-</body>
-</html>
+  // Nav active state on scroll
+  window.addEve
