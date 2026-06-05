@@ -3,1014 +3,464 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shavon Gaddie — Revenue Cycle Leader</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Shavon Gaddie — Healthcare Revenue Optimization Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --rose-gold: #C9A87C;
-    --rose-mid: #D9BC98;
-    --rose-dark: #A07848;
-    --rose-pale: #F0E6D8;
-    --dark: #0D0F12;
-    --dark-mid: #1A1D22;
-    --dark-card: #22262D;
-    --dark-sidebar: #2A2E35;
-    --white: #FFFFFF;
-    --off-white: #F8F4F0;
-    --ink: #1A1A1A;
-    --mid: #888888;
-    --light: #BBAFA8;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--dark);
-    color: var(--off-white);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-    overflow-x: hidden;
-  }
-
-  /* ── NOISE TEXTURE OVERLAY ─────────────────────────────────────── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1000;
-    opacity: 0.4;
-  }
-
-  /* ── HERO ──────────────────────────────────────────────────────── */
-  .hero {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201,168,124,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 80% at 10% 80%, rgba(160,120,72,0.06) 0%, transparent 50%),
-      linear-gradient(135deg, #0D0F12 0%, #161920 50%, #0D0F12 100%);
-  }
-
-  .hero-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
-    animation: shimmer 3s ease-in-out infinite;
-  }
-
-  @keyframes shimmer {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .hero-left { animation: fadeSlideUp 1s ease forwards; opacity: 0; }
-  .hero-right { animation: fadeSlideUp 1s ease 0.3s forwards; opacity: 0; }
-
-  @keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .eyebrow {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    color: var(--rose-gold);
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .eyebrow::before {
-    content: '';
-    width: 32px;
-    height: 1px;
-    background: var(--rose-gold);
-  }
-
-  .hero-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(52px, 6vw, 80px);
-    font-weight: 300;
-    line-height: 1.05;
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-
-  .hero-name span {
-    color: var(--rose-gold);
-    font-style: italic;
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 400;
-    color: var(--rose-mid);
-    margin-bottom: 32px;
-    letter-spacing: 1px;
-  }
-
-  .hero-tagline {
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--light);
-    line-height: 1.8;
-    max-width: 420px;
-    margin-bottom: 48px;
-    border-left: 2px solid var(--rose-gold);
-    padding-left: 20px;
-  }
-
-  .hero-cta {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 32px;
-    background: var(--rose-gold);
-    color: var(--dark);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .btn-primary:hover {
-    background: var(--rose-mid);
-    transform: translateY(-2px);
-  }
-
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 14px 32px;
-    border: 1px solid rgba(201,168,124,0.4);
-    color: var(--rose-gold);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--rose-gold);
-    background: rgba(201,168,124,0.08);
-    transform: translateY(-2px);
-  }
-
-  /* Metrics cards */
-  .metrics-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .metric-card {
-    background: var(--dark-card);
-    border: 1px solid rgba(201,168,124,0.12);
-    padding: 28px 24px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    animation: fadeSlideUp 1s ease forwards;
-    opacity: 0;
-  }
-
-  .metric-card:nth-child(1) { animation-delay: 0.5s; }
-  .metric-card:nth-child(2) { animation-delay: 0.65s; }
-  .metric-card:nth-child(3) { animation-delay: 0.8s; }
-  .metric-card:nth-child(4) { animation-delay: 0.95s; }
-
-  .metric-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--rose-gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-
-  .metric-card:hover { border-color: rgba(201,168,124,0.3); transform: translateY(-4px); }
-  .metric-card:hover::before { transform: scaleX(1); }
-
-  .metric-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    font-weight: 300;
-    color: var(--rose-gold);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-
-  .metric-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--light);
-  }
-
-  /* ── NAV ───────────────────────────────────────────────────────── */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    padding: 24px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(180deg, rgba(13,15,18,0.95) 0%, transparent 100%);
-    backdrop-filter: blur(10px);
-  }
-
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--white);
-    text-decoration: none;
-    letter-spacing: 1px;
-  }
-
-  .nav-logo span { color: var(--rose-gold); font-style: italic; }
-
-  .nav-links {
-    display: flex;
-    gap: 40px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--light);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-
-  .nav-links a:hover { color: var(--rose-gold); }
-
-  /* ── SECTIONS ──────────────────────────────────────────────────── */
-  section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 100px 60px;
-  }
-
-  .section-eyebrow {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 4px;
-    color: var(--rose-gold);
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .section-eyebrow::before {
-    content: '';
-    width: 32px;
-    height: 1px;
-    background: var(--rose-gold);
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 4vw, 54px);
-    font-weight: 300;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 60px;
-  }
-
-  .section-title em {
-    color: var(--rose-gold);
-    font-style: italic;
-  }
-
-  /* ── ABOUT ─────────────────────────────────────────────────────── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-  }
-
-  .about-text p {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--light);
-    margin-bottom: 20px;
-  }
-
-  .about-text p strong {
-    color: var(--rose-mid);
-    font-weight: 500;
-  }
-
-  .about-divider {
-    width: 48px;
-    height: 1px;
-    background: var(--rose-gold);
-    margin: 32px 0;
-  }
-
-  /* Certifications */
-  .cert-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .cert-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 20px;
-    background: var(--dark-card);
-    border: 1px solid rgba(201,168,124,0.1);
-    transition: all 0.3s ease;
-  }
-
-  .cert-item:hover {
-    border-color: rgba(201,168,124,0.3);
-    transform: translateX(4px);
-  }
-
-  .cert-badge {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--rose-dark), var(--rose-gold));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    color: var(--dark);
-    flex-shrink: 0;
-  }
-
-  .cert-name {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--off-white);
-    margin-bottom: 4px;
-  }
-
-  .cert-org {
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: var(--rose-gold);
-    text-transform: uppercase;
-  }
-
-  /* ── EXPERTISE ─────────────────────────────────────────────────── */
-  .expertise-section {
-    background: var(--dark-mid);
-    max-width: 100%;
-    padding: 100px 0;
-  }
-
-  .expertise-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 60px;
-  }
-
-  .expertise-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(201,168,124,0.1);
-  }
-
-  .expertise-item {
-    background: var(--dark-mid);
-    padding: 48px 36px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .expertise-item::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--rose-gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
-  }
-
-  .expertise-item:hover { background: var(--dark-card); }
-  .expertise-item:hover::after { transform: scaleX(1); }
-
-  .expertise-icon {
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-
-  .expertise-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: var(--white);
-    margin-bottom: 12px;
-  }
-
-  .expertise-desc {
-    font-size: 12px;
-    font-weight: 300;
-    line-height: 1.8;
-    color: var(--mid);
-  }
-
-  /* ── SKILLS ────────────────────────────────────────────────────── */
-  .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .skill-tag {
-    padding: 8px 18px;
-    border: 1px solid rgba(201,168,124,0.2);
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--light);
-    transition: all 0.3s ease;
-    cursor: default;
-  }
-
-  .skill-tag:hover {
-    border-color: var(--rose-gold);
-    color: var(--rose-gold);
-    background: rgba(201,168,124,0.06);
-  }
-
-  /* ── CONTACT ───────────────────────────────────────────────────── */
-  .contact-section {
-    background: var(--dark-sidebar);
-    max-width: 100%;
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .contact-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
-  }
-
-  .contact-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 60px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: start;
-  }
-
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin-top: 40px;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 20px;
-    background: rgba(0,0,0,0.2);
-    border: 1px solid rgba(201,168,124,0.1);
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .contact-item:hover {
-    border-color: rgba(201,168,124,0.4);
-    background: rgba(201,168,124,0.05);
-  }
-
-  .contact-icon {
-    width: 40px;
-    height: 40px;
-    background: rgba(201,168,124,0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-
-  .contact-detail {
-    flex: 1;
-  }
-
-  .contact-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--rose-gold);
-    margin-bottom: 4px;
-  }
-
-  .contact-value {
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--off-white);
-  }
-
-  /* Contact form */
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 40px;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .form-group label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--rose-gold);
-  }
-
-  .form-group input,
-  .form-group textarea {
-    background: rgba(0,0,0,0.3);
-    border: 1px solid rgba(201,168,124,0.15);
-    padding: 14px 18px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--off-white);
-    outline: none;
-    transition: border-color 0.3s ease;
-    resize: none;
-  }
-
-  .form-group input:focus,
-  .form-group textarea:focus {
-    border-color: rgba(201,168,124,0.5);
-  }
-
-  .form-group input::placeholder,
-  .form-group textarea::placeholder {
-    color: rgba(187,175,168,0.4);
-  }
-
-  .form-submit {
-    padding: 16px 40px;
-    background: var(--rose-gold);
-    color: var(--dark);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-  }
-
-  .form-submit:hover {
-    background: var(--rose-mid);
-    transform: translateY(-2px);
-  }
-
-  /* ── FOOTER ────────────────────────────────────────────────────── */
-  footer {
-    background: var(--dark);
-    padding: 40px 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid rgba(201,168,124,0.1);
-  }
-
-  .footer-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 300;
-    color: var(--light);
-  }
-
-  .footer-name span { color: var(--rose-gold); }
-
-  .footer-copy {
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: rgba(187,175,168,0.4);
-  }
-
-  /* ── DIVIDER LINE ──────────────────────────────────────────────── */
-  .full-divider {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(201,168,124,0.3), transparent);
-    margin: 0;
-  }
-
-  /* ── SCROLL REVEAL ─────────────────────────────────────────────── */
-  .reveal {
-    opacity: 1;
-    transform: translateY(0);
-    animation: fadeUp 0.7s ease forwards;
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── RESPONSIVE ────────────────────────────────────────────────── */
-  @media (max-width: 900px) {
-    nav { padding: 20px 30px; }
-    .nav-links { display: none; }
-    .hero-content { grid-template-columns: 1fr; gap: 60px; padding: 100px 30px 60px; }
-    section { padding: 70px 30px; }
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
-    .expertise-grid { grid-template-columns: 1fr; }
-    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
-    footer { flex-direction: column; gap: 16px; text-align: center; padding: 30px; }
-    .expertise-inner { padding: 0 30px; }
-    .contact-inner { padding: 0 30px; }
-  }
+:root {
+  --rg: #C9A87C;
+  --rg-light: #D9BC98;
+  --rg-dark: #A07848;
+  --dark: #1A1D22;
+  --dark-2: #2A2E35;
+  --dark-3: #22262D;
+  --dark-4: #333840;
+  --white: #FFFFFF;
+  --off: #F8F4F0;
+  --light: #BBAFA8;
+  --pale: #C0B8B0;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--dark); color: var(--off); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; cursor: none; }
+
+.cursor { position: fixed; width: 8px; height: 8px; background: var(--rg); border-radius: 50%; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; }
+.cursor-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(201,168,124,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transition: all 0.15s ease; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 28px 60px; display: flex; justify-content: space-between; align-items: center; background: linear-gradient(180deg, rgba(12,12,12,0.95) 0%, transparent 100%); backdrop-filter: blur(8px); }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--white); text-decoration: none; }
+.nav-logo em { color: var(--rg); font-style: italic; }
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--pale); text-decoration: none; transition: color 0.3s; }
+.nav-links a:hover { color: var(--rg); }
+
+/* HERO */
+.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+.hero-left { background: var(--dark-2); padding: 160px 80px 80px; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+.hero-left::after { content: ''; position: absolute; top: 0; right: -1px; bottom: 0; width: 2px; background: linear-gradient(180deg, transparent, var(--rg), transparent); }
+.hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 4px; color: var(--rg); text-transform: uppercase; margin-bottom: 32px; display: flex; align-items: center; gap: 16px; }
+.hero-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--rg); }
+.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(48px, 5.5vw, 80px); font-weight: 900; line-height: 1; color: var(--white); }
+.hero-name-2 { font-family: 'Playfair Display', serif; font-size: clamp(48px, 5.5vw, 80px); font-weight: 400; font-style: italic; line-height: 1; color: var(--rg); margin-bottom: 32px; }
+.hero-title { font-size: 13px; font-weight: 400; letter-spacing: 2px; color: var(--pale); text-transform: uppercase; margin-bottom: 48px; padding-left: 56px; position: relative; }
+.hero-title::before { content: ''; position: absolute; left: 0; top: 50%; width: 40px; height: 1px; background: var(--rg-dark); }
+.hero-tagline { font-size: 15px; line-height: 1.9; color: var(--light); max-width: 400px; margin-bottom: 56px; border-left: 2px solid var(--rg); padding-left: 24px; }
+.hero-cta { display: flex; gap: 16px; }
+.btn-gold { padding: 14px 36px; background: var(--rg); color: var(--dark); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
+.btn-gold:hover { background: var(--rg-light); transform: translateY(-2px); }
+.btn-outline { padding: 14px 36px; border: 1px solid rgba(201,168,124,0.3); color: var(--rg); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
+.btn-outline:hover { border-color: var(--rg); background: rgba(201,168,124,0.06); transform: translateY(-2px); }
+.hero-right { background: var(--dark-3); padding: 160px 80px 80px; display: flex; flex-direction: column; justify-content: center; gap: 20px; }
+.metric-card { background: var(--dark-2); border: 1px solid rgba(201,168,124,0.08); padding: 28px 32px; position: relative; overflow: hidden; transition: all 0.4s; animation: fadeUp 0.8s ease forwards; opacity: 0; }
+.metric-card:nth-child(1) { animation-delay: 0.2s; }
+.metric-card:nth-child(2) { animation-delay: 0.35s; }
+.metric-card:nth-child(3) { animation-delay: 0.5s; }
+.metric-card:nth-child(4) { animation-delay: 0.65s; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.metric-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--rg); transform: scaleY(0); transform-origin: bottom; transition: transform 0.4s ease; }
+.metric-card:hover { border-color: rgba(201,168,124,0.2); transform: translateX(6px); }
+.metric-card:hover::before { transform: scaleY(1); }
+.metric-num { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 700; color: var(--rg); line-height: 1; margin-bottom: 6px; }
+.metric-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--pale); }
+
+/* ABOUT */
+.about { padding: 120px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; background: var(--dark-2); }
+.section-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 4px; color: var(--rg); text-transform: uppercase; margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
+.section-label::before { content: ''; width: 32px; height: 1px; background: var(--rg); }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(32px, 3.5vw, 52px); font-weight: 400; line-height: 1.15; color: var(--white); margin-bottom: 48px; }
+.section-title em { color: var(--rg); font-style: italic; }
+.about-text p { font-size: 14px; line-height: 1.9; color: var(--light); margin-bottom: 20px; }
+.about-text strong { color: var(--rg-light); font-weight: 500; }
+.about-divider { width: 48px; height: 1px; background: var(--rg); margin: 32px 0; }
+.currently-list { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+.currently-item { display: flex; align-items: flex-start; gap: 14px; font-size: 13px; color: var(--light); line-height: 1.6; }
+.currently-dot { width: 6px; height: 6px; background: var(--rg); border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.cert-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+.cert-item { display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: var(--dark-3); border: 1px solid rgba(201,168,124,0.08); transition: all 0.3s; }
+.cert-item:hover { border-color: rgba(201,168,124,0.25); transform: translateX(4px); }
+.cert-badge { width: 44px; height: 44px; background: linear-gradient(135deg, var(--rg-dark), var(--rg)); display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 500; color: var(--dark); flex-shrink: 0; }
+.cert-name { font-size: 12px; font-weight: 500; color: var(--off); margin-bottom: 3px; }
+.cert-org { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--rg); text-transform: uppercase; }
+
+/* DIS */
+.dis-section { padding: 140px 80px; background: var(--dark); position: relative; overflow: hidden; }
+.dis-section::before { content: 'DIS'; position: absolute; bottom: -20px; left: -20px; font-family: 'Playfair Display', serif; font-size: 300px; font-weight: 900; color: rgba(201,168,124,0.03); pointer-events: none; line-height: 1; }
+.dis-header { text-align: center; margin-bottom: 80px; }
+.dis-name { font-family: 'Playfair Display', serif; font-size: clamp(36px, 4vw, 64px); font-weight: 900; color: var(--white); margin-bottom: 12px; letter-spacing: -1px; }
+.dis-name span { color: var(--rg); }
+.dis-tagline { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 6px; color: var(--pale); text-transform: uppercase; }
+.dis-tagline span { color: var(--rg); padding: 0 16px; }
+.phase-timeline { position: relative; max-width: 900px; margin: 0 auto; }
+.phase-line { position: absolute; left: 28px; top: 0; bottom: 0; width: 1px; background: linear-gradient(180deg, transparent, var(--rg), var(--rg), transparent); }
+.phase-item { display: grid; grid-template-columns: 60px 1fr; gap: 32px; margin-bottom: 40px; opacity: 0; transform: translateX(-20px); transition: all 0.6s ease; }
+.phase-item.visible { opacity: 1; transform: translateX(0); }
+.phase-num { width: 56px; height: 56px; background: var(--dark-2); border: 1px solid var(--rg); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--rg); flex-shrink: 0; transition: all 0.3s; }
+.phase-item:hover .phase-num { background: var(--rg); color: var(--dark); }
+.phase-content { padding: 20px 32px; background: var(--dark-2); border: 1px solid rgba(201,168,124,0.08); transition: all 0.3s; }
+.phase-item:hover .phase-content { border-color: rgba(201,168,124,0.2); }
+.phase-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.phase-name span { font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 400; letter-spacing: 3px; color: var(--rg); text-transform: uppercase; margin-left: 12px; vertical-align: middle; }
+.phase-desc { font-size: 13px; line-height: 1.8; color: var(--light); }
+
+/* CASE STUDY */
+.case-study { padding: 120px 80px; background: var(--dark-2); }
+.cs-header { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: start; margin-bottom: 60px; }
+.cs-tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; border: 1px solid rgba(201,168,124,0.3); font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--rg); text-transform: uppercase; margin-bottom: 16px; }
+.cs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: rgba(201,168,124,0.1); }
+.cs-block { background: var(--dark-3); padding: 40px; }
+.cs-block-title { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--rg); text-transform: uppercase; margin-bottom: 16px; }
+.cs-block-text { font-size: 13px; line-height: 1.8; color: var(--light); }
+.cs-block-text strong { color: var(--rg-light); font-weight: 500; }
+.cs-impact { background: var(--dark-4); padding: 48px; margin-top: 2px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.cs-impact-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--rg); margin-bottom: 6px; }
+.cs-impact-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--pale); text-transform: uppercase; }
+
+/* SKILLS */
+.skills-section { padding: 120px 80px; background: var(--dark-3); }
+.skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 48px; }
+.skill-tag { padding: 10px 20px; border: 1px solid rgba(201,168,124,0.15); font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--light); transition: all 0.3s; cursor: default; }
+.skill-tag:hover { border-color: var(--rg); color: var(--rg); background: rgba(201,168,124,0.05); }
+
+/* CONTACT */
+.contact { padding: 120px 80px; background: var(--dark); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; position: relative; }
+.contact::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--rg), transparent); }
+.contact-info { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; }
+.contact-item { display: flex; align-items: center; gap: 20px; padding: 20px 24px; background: var(--dark-2); border: 1px solid rgba(201,168,124,0.08); text-decoration: none; transition: all 0.3s; }
+.contact-item:hover { border-color: rgba(201,168,124,0.3); transform: translateX(6px); }
+.contact-icon { width: 44px; height: 44px; background: rgba(201,168,124,0.1); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.contact-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--rg); margin-bottom: 4px; }
+.contact-value { font-size: 13px; color: var(--off); }
+.contact-form { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--rg); }
+.form-input, .form-textarea { background: var(--dark-2); border: 1px solid rgba(201,168,124,0.12); padding: 14px 18px; font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--off); outline: none; transition: border-color 0.3s; resize: none; }
+.form-input:focus, .form-textarea:focus { border-color: rgba(201,168,124,0.4); }
+
+
+footer { padding: 40px 80px; background: var(--dark-2); display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(201,168,124,0.1); }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--light); }
+.footer-logo em { color: var(--rg); }
+.footer-copy { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 1px; color: rgba(200,188,176,0.3); }
+.full-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(201,168,124,0.2), transparent); }
+
+@media (max-width: 900px) {
+  nav { padding: 20px 30px; }
+  .nav-links { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left, .hero-right { padding: 120px 30px 60px; }
+  .about, .contact { grid-template-columns: 1fr; gap: 60px; padding: 80px 30px; }
+  .dis-section, .case-study, .skills-section { padding: 80px 30px; }
+  .cs-grid { grid-template-columns: 1fr; }
+  .cs-impact { grid-template-columns: 1fr; gap: 24px; padding: 32px; }
+  footer { flex-direction: column; gap: 16px; padding: 30px; text-align: center; }
+  body { cursor: auto; }
+  .cursor, .cursor-ring { display: none; }
+}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
 <nav>
-  <a href="#" class="nav-logo">Shavon <span>Gaddie</span></a>
+  <a href="#" class="nav-logo">Shavon <em>Gaddie</em></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#expertise">Expertise</a></li>
-    <li><a href="#skills">Skills</a></li>
+    <li><a href="#dis">Methodology</a></li>
+    <li><a href="#case-study">Case Study</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-line"></div>
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-left">
-      <div class="eyebrow">Revenue Cycle Leadership</div>
-      <h1 class="hero-name">Shavon<br><span>Gaddie</span></h1>
-      <p class="hero-title">Healthcare Revenue Optimization Engineer</p>
-      <p class="hero-tagline">
-        Engineering the systems that protect revenue.<br>
-        Building the teams that sustain it.<br><br>
-        15+ years transforming denial prevention from reactive cost center to strategic, revenue-protecting infrastructure across major health systems nationwide.
-      </p>
-      <div class="hero-cta">
-        <a href="/cdn-cgi/l/email-protection#3b68535a4d5455154f535e157c5a5f5f525e7b5c565a525715585456" class="btn-primary">Get In Touch</a>
-        <a href="#about" class="btn-secondary">Learn More</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-number">15+</div>
-          <div class="metric-label">Years Experience</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-number">18%</div>
-          <div class="metric-label">Denial Reduction</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-number">30%</div>
-          <div class="metric-label">Workflow Efficiency</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-number">25%</div>
-          <div class="metric-label">Claims Resolution</div>
-        </div>
-      </div>
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Healthcare Revenue Optimization</div>
+    <h1 class="hero-name">Shavon</h1>
+    <h1 class="hero-name-2">Gaddie</h1>
+    <p class="hero-title">Healthcare Revenue Optimization Engineer</p>
+    <p class="hero-tagline">
+      Engineering the systems that protect revenue.<br>
+      Building the teams that sustain it.<br><br>
+      15+ years transforming denial management from reactive cost center to strategic, revenue-protecting infrastructure across major health systems nationwide.
+    </p>
+    <div class="hero-cta">
+      <a href="#dis" class="btn-gold">My Methodology</a>
+      <a href="mailto:Shavon.the.Gaddie@gmail.com" class="btn-outline">Contact</a>
     </div>
   </div>
-</div>
+  <div class="hero-right">
+    <div class="metric-card"><div class="metric-num">15+</div><div class="metric-label">Years of Progressive Leadership</div></div>
+    <div class="metric-card"><div class="metric-num">32.4%</div><div class="metric-label">Denial Overturn Rate</div></div>
+    <div class="metric-card"><div class="metric-num">20+</div><div class="metric-label">Hospital System Scope</div></div>
+    <div class="metric-card"><div class="metric-num">$218M</div><div class="metric-label">Revenue Enhancement Business Case</div></div>
+  </div>
+</section>
 
 <div class="full-divider"></div>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="section-eyebrow">About</div>
-  <h2 class="section-title">A rare combination of<br><em>clinical, operational,</em><br>and strategic expertise</h2>
-  <div class="about-grid">
-    <div class="about-text reveal">
-      <p>
-        A strategic thinker who builds and optimizes denial prevention infrastructure from the ground up, translating complex payer dynamics into clear strategy and protecting revenue at enterprise scale.
-      </p>
-      <p>
-        Moving organizations from <strong>reactive to strategic</strong> through a rare combination of clinical knowledge, operational expertise, and financial acuity. Committed to excellence, building elite teams, and developing high-performing talent.
-      </p>
+<section class="about" id="about">
+  <div>
+    <div class="section-label">About</div>
+    <h2 class="section-title">A rare combination of<br><em>clinical, operational,</em><br>and strategic expertise</h2>
+    <div class="about-text">
+      <p>A strategic thinker who builds and optimizes denial prevention infrastructure from the ground up, translating complex payer dynamics into clear strategy and protecting revenue at enterprise scale.</p>
+      <p>Moving organizations from <strong>reactive to strategic</strong> through a rare combination of clinical knowledge, operational expertise, and financial acuity. Committed to excellence, building elite teams, and developing high-performing talent.</p>
       <div class="about-divider"></div>
-      <div class="section-eyebrow" style="margin-bottom: 16px; margin-top: 0;">Currently</div>
-      <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px;">
-        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: var(--light); line-height: 1.6;">
-          <span style="color: var(--rose-gold); margin-top: 2px; flex-shrink: 0;">◆</span>
-          Pursuing EHRC designation through HFMA
-        </li>
-        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: var(--light); line-height: 1.6;">
-          <span style="color: var(--rose-gold); margin-top: 2px; flex-shrink: 0;">◆</span>
-          Advancing AI governance practices in healthcare revenue cycle
-        </li>
-        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: var(--light); line-height: 1.6;">
-          <span style="color: var(--rose-gold); margin-top: 2px; flex-shrink: 0;">◆</span>
-          Open to Director-level revenue cycle opportunities nationwide
-        </li>
-      </ul>
+      <p>Currently serving as <strong>Manager, Centralized Clinical Denials Management</strong> at Piedmont Healthcare, leading enterprise AI-powered clinical appeals implementation, IRO framework development, and denial prevention strategy across a 20+ hospital system.</p>
     </div>
-    <div class="reveal">
-      <div class="section-eyebrow" style="margin-bottom: 24px;">HFMA Certifications</div>
-      <div class="cert-list">
-        <div class="cert-item">
-          <div class="cert-badge">CHFP</div>
-          <div>
-            <div class="cert-name">Certified Healthcare Financial Professional</div>
-            <div class="cert-org">HFMA</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-badge">CRCR</div>
-          <div>
-            <div class="cert-name">Certified Revenue Cycle Representative</div>
-            <div class="cert-org">HFMA</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-badge">CSPR</div>
-          <div>
-            <div class="cert-name">Certified Specialist Physician Revenue Cycle</div>
-            <div class="cert-org">HFMA</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-badge">CSBI</div>
-          <div>
-            <div class="cert-name">Certified Specialist Business Intelligence</div>
-            <div class="cert-org">HFMA</div>
-          </div>
-        </div>
+    <div style="margin-top: 32px;">
+      <div class="section-label" style="margin-bottom: 16px;">Currently</div>
+      <div class="currently-list">
+        <div class="currently-item"><div class="currently-dot"></div>Pursuing EHRC designation through HFMA</div>
+        <div class="currently-item"><div class="currently-dot"></div>Advancing AI governance practices in healthcare revenue cycle</div>
+        <div class="currently-item"><div class="currently-dot"></div>Available for strategic conversations, advisory opportunities, and healthcare revenue cycle transformation work</div>
       </div>
-
-      <div class="section-eyebrow" style="margin-bottom: 24px; margin-top: 36px;">Education</div>
-      <div class="cert-list">
-        <div class="cert-item">
-          <div class="cert-badge" style="font-size: 8px;">MS</div>
-          <div>
-            <div class="cert-name">Master of Science, Organizational Leadership</div>
-            <div class="cert-org">Graduate Degree</div>
-          </div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-badge" style="font-size: 8px;">BS</div>
-          <div>
-            <div class="cert-name">Bachelor of Science, Organizational Management</div>
-            <div class="cert-org">Undergraduate Degree</div>
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>
+  <div>
+    <div class="section-label">HFMA Certifications</div>
+    <div class="cert-grid">
+      <div class="cert-item"><div class="cert-badge">CHFP</div><div><div class="cert-name">Certified Healthcare Financial Professional</div><div class="cert-org">HFMA</div></div></div>
+      <div class="cert-item"><div class="cert-badge">CRCR</div><div><div class="cert-name">Certified Revenue Cycle Representative</div><div class="cert-org">HFMA</div></div></div>
+      <div class="cert-item"><div class="cert-badge">CSPR</div><div><div class="cert-name">Certified Specialist Payment and Reimbursement</div><div class="cert-org">HFMA</div></div></div>
+      <div class="cert-item"><div class="cert-badge">CSBI</div><div><div class="cert-name">Certified Specialist Business Intelligence</div><div class="cert-org">HFMA</div></div></div>
+      <div class="cert-item" style="border-color: rgba(201,168,124,0.2);"><div class="cert-badge" style="background: linear-gradient(135deg, #2A2A2A, #444); color: var(--rg); border: 1px solid var(--rg);">EHRC</div><div><div class="cert-name">Executive of Healthcare Revenue Cycle</div><div class="cert-org" style="color: var(--pale);">In Progress — HFMA</div></div></div>
     </div>
   </div>
 </section>
 
 <div class="full-divider"></div>
 
-<!-- EXPERTISE -->
-<div class="expertise-section" id="expertise">
-  <div class="expertise-inner">
-    <div class="section-eyebrow reveal">Core Expertise</div>
-    <h2 class="section-title reveal">What <em>I do</em></h2>
-    <div class="expertise-grid">
-      <div class="expertise-item reveal">
-        <div class="expertise-icon">◆</div>
-        <div class="expertise-title">Denial Prevention Infrastructure</div>
-        <p class="expertise-desc">Architect enterprise-level denial prevention systems from the ground up. Author of appeal playbooks and payer-specific legal templates used across multi-hospital systems. Maintain living repositories of payer medical policies to support complex medical necessity arguments.</p>
-      </div>
-      <div class="expertise-item reveal">
-        <div class="expertise-icon">◆</div>
-        <div class="expertise-title">AI-Powered Clinical Appeals</div>
-        <p class="expertise-desc">Designated super user for enterprise AI-powered clinical appeals implementation. Established data governance protocols and human-in-the-loop oversight models. Reduced chart review time by 35% and improved denial overturn rates by 15%.</p>
-      </div>
-      <div class="expertise-item reveal">
-        <div class="expertise-icon">◆</div>
-        <div class="expertise-title">External Review and IRO Oversight</div>
-        <p class="expertise-desc">Developed Independent Review Organization framework including contractor selection protocols. Oversee IRO submission replies and trend determination outcomes against internal payer processing and initial denial rates to identify systemic payer behavior patterns.</p>
-      </div>
-      <div class="expertise-item reveal">
-        <div class="expertise-icon">◆</div>
-        <div class="expertise-title">Revenue Cycle Transformation</div>
-        <p class="expertise-desc">15+ years moving organizations from reactive to strategic across national health systems. Track record delivering 18% denial reduction, 20% faster reimbursement timelines, and 30% workflow efficiency gains through data-driven process redesign.</p>
-      </div>
-      <div class="expertise-item reveal">
-        <div class="expertise-icon">◆</div>
-        <div class="expertise-title">Team Development and Leadership</div>
-        <p class="expertise-desc">Build and lead high-performing clinical denials teams. Develop training programs on appeal best practices, payer policy nuances, and AI collaboration workflows. Create cultures of proactive engagement and data-driven accountability.</p>
-      </div>
-      <div class="expertise-item reveal">
-        <div class="expertise-icon">◆</div>
-        <div class="expertise-title">Payer Strategy and Analytics</div>
-        <p class="expertise-desc">Translate complex payer dynamics into actionable operational strategy. Develop KPI frameworks from first principles, produce executive-level reporting, and identify systemic payer behavior patterns that drive managed care review.</p>
+<!-- THE DENIAL INTELLIGENCE SYSTEM -->
+<section class="dis-section" id="dis">
+  <div class="dis-header">
+    <div class="section-label" style="justify-content: center; margin-bottom: 20px;">Signature Methodology</div>
+    <h2 class="dis-name">The Denial Intelligence <span>System</span></h2>
+    <p class="dis-tagline">Systematic <span>◆</span> Preventive <span>◆</span> Cyclical</p>
+  </div>
+
+  <div class="phase-timeline">
+    <div class="phase-line"></div>
+
+    <div class="phase-item">
+      <div class="phase-num">1</div>
+      <div class="phase-content">
+        <div class="phase-name">Scope <span>Account Stratification</span></div>
+        <p class="phase-desc">Every review begins with a disciplined sampling methodology. Account populations are stratified by volume and a randomized selection process ensures statistical validity across the review. The scope is defined before a single account is touched.</p>
       </div>
     </div>
+
+    <div class="phase-item">
+      <div class="phase-num">2</div>
+      <div class="phase-content">
+        <div class="phase-name">Investigate <span>Account-Level Review</span></div>
+        <p class="phase-desc">Each account in the sample is reviewed at the account level. Not summary data. Not reports. The actual account. Every denial reason, every payer action, every documentation gap is examined individually to understand what actually happened.</p>
+      </div>
+    </div>
+
+    <div class="phase-item">
+      <div class="phase-num">3</div>
+      <div class="phase-content">
+        <div class="phase-name">Classify <span>Root Cause Grouping</span></div>
+        <p class="phase-desc">Like root causes are grouped together and ranked by the dollar amount associated with each category. This transforms individual account findings into a prioritized denial landscape that leadership can act on strategically rather than reactively.</p>
+      </div>
+    </div>
+
+    <div class="phase-item">
+      <div class="phase-num">4</div>
+      <div class="phase-content">
+        <div class="phase-name">Strategize <span>Prevention Development</span></div>
+        <p class="phase-desc">For each root cause category, preventive methods, recommendations, and mitigation plans are developed through research, resource consultation, and cross-functional collaboration. The goal is always prevention at the source, not recovery after the fact.</p>
+      </div>
+    </div>
+
+    <div class="phase-item">
+      <div class="phase-num">5</div>
+      <div class="phase-content">
+        <div class="phase-name">Charter <span>Formal Documentation</span></div>
+        <p class="phase-desc">Findings are documented in a charter defining the problem, root cause, financial impact, and recommended corrective action. The charter is reviewed with internal leadership, refined through cross-functional input, and presented to the National Denials Committee Avoidance Group for transparency and accountability.</p>
+      </div>
+    </div>
+
+    <div class="phase-item">
+      <div class="phase-num">6</div>
+      <div class="phase-content">
+        <div class="phase-name">Implement <span>Mitigation Execution</span></div>
+        <p class="phase-desc">Once approved, mitigation initiatives are executed across relevant workflows, systems, and teams. Implementation is tracked against the charter to ensure the corrective action is being executed as designed and that responsible parties are held accountable for adoption.</p>
+      </div>
+    </div>
+
+    <div class="phase-item">
+      <div class="phase-num">7</div>
+      <div class="phase-content">
+        <div class="phase-name">Monitor <span>Continuous Surveillance</span></div>
+        <p class="phase-desc">Implemented initiatives enter a monitoring phase where denial trends are tracked to confirm prevention methods are producing downward movement. After a defined monitoring period, initiatives are archived and placed under ongoing monthly surveillance. If numbers trend outward, the cycle begins again. The system never stops.</p>
+      </div>
+    </div>
+
   </div>
-</div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- CASE STUDY -->
+<section class="case-study" id="case-study">
+  <div class="cs-header">
+    <div>
+      <div class="section-label">The Denial Intelligence System in Action</div>
+      <h2 class="section-title">Case Study:<br><em>Mid-Surgery Procedure</em><br>Change Protocol</h2>
+    </div>
+    <div>
+      <div class="cs-tag">◆ Anonymized Client</div>
+      <div style="font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--light); margin-top: 8px; line-height: 1.8;">Large Integrated Health System<br>Western Region</div>
+    </div>
+  </div>
+
+  <div class="cs-grid">
+    <div class="cs-block">
+      <div class="cs-block-title">The Problem</div>
+      <p class="cs-block-text">During a denial mitigation review of outpatient surgery accounts, a pattern was identified where claims were being denied for no authorization despite <strong>valid authorizations being on file</strong> at the time of submission. The payer was receiving claims reflecting the actual procedure performed which did not match the authorized procedure and was denying on first pass regardless of authorization validity.</p>
+    </div>
+    <div class="cs-block">
+      <div class="cs-block-title">Root Cause</div>
+      <p class="cs-block-text">Two intersecting failures operating simultaneously. First, an <strong>internal workflow gap</strong> — no defined process required the surgical or authorization team to notify the payer when a procedure changed intraoperatively. Second, a <strong>payer behavior issue</strong> — systematic denial of valid claims at initial adjudication. Every denied account was overturned on appeal, confirming the denial was never clinically justified.</p>
+    </div>
+    <div class="cs-block">
+      <div class="cs-block-title">The Solution</div>
+      <p class="cs-block-text">Two parallel paths recommended simultaneously. On the internal side, a <strong>defined mid-surgery procedure change communication process</strong> requiring surgical or authorization teams to notify the payer and update the authorization before claim submission. On the payer side, a <strong>managed care escalation</strong> to establish a formal agreement for handling procedure change scenarios — modeled after a successful precedent with another major payer.</p>
+    </div>
+    <div class="cs-block">
+      <div class="cs-block-title">Monitoring Framework</div>
+      <p class="cs-block-text">Five metrics established to track intervention effectiveness: monthly authorization denial volume pre and post implementation, volume of denials despite valid authorization on file, appeal overturn rate to confirm payer accountability, time from procedure change to payer notification as an operational compliance metric, and monthly dollar recovery from appeals during the transition period.</p>
+    </div>
+  </div>
+
+  <div class="cs-impact">
+    <div class="cs-impact-item">
+      <div class="cs-impact-num">$2.8M</div>
+      <div class="cs-impact-label">Outpatient Surgery Charter Opportunity</div>
+    </div>
+    <div class="cs-impact-item">
+      <div class="cs-impact-num">$18.7M</div>
+      <div class="cs-impact-label">Single Payer Auth and MN Denial Exposure</div>
+    </div>
+    <div class="cs-impact-item">
+      <div class="cs-impact-num">100%</div>
+      <div class="cs-impact-label">Appeal Overturn Rate on Reviewed Accounts</div>
+    </div>
+  </div>
+</section>
 
 <div class="full-divider"></div>
 
 <!-- SKILLS -->
-<section id="skills">
-  <div class="section-eyebrow reveal">Competencies</div>
-  <h2 class="section-title reveal">Core <em>Skills</em></h2>
-  <div class="skills-grid reveal">
-    <div class="skill-tag">Denial Prevention and Resolution</div>
+<section class="skills-section" id="skills">
+  <div class="section-label">Core Competencies</div>
+  <h2 class="section-title">Areas of <em>Expertise</em></h2>
+  <div class="skills-grid">
+    <div class="skill-tag">Denial Prevention</div>
     <div class="skill-tag">Revenue Cycle Management</div>
-    <div class="skill-tag">AI Governance and Data Oversight</div>
+    <div class="skill-tag">AI Governance</div>
     <div class="skill-tag">Human-AI Workflow Design</div>
-    <div class="skill-tag">AI-Powered Clinical Appeals</div>
-    <div class="skill-tag">Data-Driven Strategy</div>
-    <div class="skill-tag">Healthcare Compliance</div>
-    <div class="skill-tag">KPI Development and Tracking</div>
-    <div class="skill-tag">Cross-Functional Leadership</div>
-    <div class="skill-tag">InterQual and MCG Standards</div>
+    <div class="skill-tag">Clinical Appeals Strategy</div>
     <div class="skill-tag">Root Cause Analysis</div>
-    <div class="skill-tag">Performance Benchmarking</div>
-    <div class="skill-tag">Strategic Planning and Execution</div>
-    <div class="skill-tag">Risk Assessment and Mitigation</div>
-    <div class="skill-tag">Workflow Automation</div>
-    <div class="skill-tag">Revenue Optimization</div>
-    <div class="skill-tag">Payer Contract Management</div>
-    <div class="skill-tag">Financial Impact Analysis</div>
-    <div class="skill-tag">ICD-10 and LCD/NCD Interpretation</div>
+    <div class="skill-tag">InterQual and MCG Standards</div>
     <div class="skill-tag">IRO Framework Development</div>
     <div class="skill-tag">Appeal Playbook Authorship</div>
+    <div class="skill-tag">Power BI</div>
+    <div class="skill-tag">Tableau</div>
+    <div class="skill-tag">Smartsheets</div>
+    <div class="skill-tag">SQL Query Writing</div>
+    <div class="skill-tag">KPI Development</div>
+    <div class="skill-tag">Payer Contract Management</div>
+    <div class="skill-tag">RAC MAC TPE Audit Management</div>
+    <div class="skill-tag">Medicare and Medicaid Compliance</div>
     <div class="skill-tag">Medical Necessity Appeals</div>
+    <div class="skill-tag">Cross-Functional Leadership</div>
+    <div class="skill-tag">Change Management</div>
+    <div class="skill-tag">Executive Reporting</div>
+    <div class="skill-tag">Charter Development</div>
+    <div class="skill-tag">Performance Benchmarking</div>
+    <div class="skill-tag">Workflow Automation</div>
   </div>
 </section>
 
 <div class="full-divider"></div>
 
 <!-- CONTACT -->
-<div class="contact-section" id="contact">
-  <div class="contact-inner">
-    <div>
-      <div class="section-eyebrow reveal">Contact</div>
-      <h2 class="section-title reveal">Let us<br><em>connect</em></h2>
-      <p class="reveal" style="font-size: 13px; font-weight: 300; color: var(--light); line-height: 1.9; max-width: 380px;">
-        Open to Director-level revenue cycle leadership opportunities, consulting engagements, and speaking on denial prevention and AI implementation in healthcare operations.
-      </p>
-      <div class="contact-info reveal">
-        <a href="tel:4049414070" class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div class="contact-detail">
-            <div class="contact-label">Phone</div>
-            <div class="contact-value">(404) 941-4070</div>
-          </div>
-        </a>
-        <a href="/cdn-cgi/l/email-protection#47142f2631282969332f2269002623232e2207202a262e2b6924282a" class="contact-item">
-          <div class="contact-icon">✉️</div>
-          <div class="contact-detail">
-            <div class="contact-label">Email</div>
-            <div class="contact-value"><span class="__cf_email__" data-cfemail="81d2e9e0f7eeefaff5e9e4afc6e0e5e5e8e4c1e6ece0e8edafe2eeec">[email&#160;protected]</span></div>
-          </div>
-        </a>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div class="contact-detail">
-            <div class="contact-label">Location</div>
-            <div class="contact-value">Atlanta, GA — Remote / Nationwide</div>
-          </div>
-        </div>
+<section class="contact" id="contact">
+  <div>
+    <div class="section-label">Contact</div>
+    <h2 class="section-title">Let us<br><em>connect</em></h2>
+    <p style="font-size: 13px; color: var(--light); line-height: 1.9; max-width: 360px; margin-top: 16px;">Open to Director-level revenue cycle leadership opportunities. Available remote or nationwide.</p>
+    <div class="contact-info">
+      <a href="tel:4049414070" class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div><div class="contact-label">Phone</div><div class="contact-value">(404) 941-4070</div></div>
+      </a>
+      <a href="mailto:Shavon.the.Gaddie@gmail.com" class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div><div class="contact-label">Email</div><div class="contact-value">Shavon.the.Gaddie&#64;gmail.com</div></div>
+      </a>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div><div class="contact-label">Location</div><div class="contact-value">Atlanta, GA — Remote / Nationwide</div></div>
       </div>
     </div>
-    <div class="reveal">
-      <div class="section-eyebrow" style="margin-bottom: 24px; margin-top: 8px;">Send a Message</div>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <label>Your Name</label>
-          <input type="text" placeholder="Full name" required>
-        </div>
-        <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="your@email.com" required>
-        </div>
-        <div class="form-group">
-          <label>Subject</label>
-          <input type="text" placeholder="How can I help?">
-        </div>
-        <div class="form-group">
-          <label>Message</label>
-          <textarea rows="5" placeholder="Tell me about your opportunity or how we can work together..." required></textarea>
-        </div>
-        <button type="submit" class="form-submit">Send Message</button>
-      </form>
+  </div>
+  <div>
+    <div class="section-label" style="margin-top: 8px;">Get In Touch</div>
+    <p style="font-size: 13px; color: var(--light); line-height: 1.9; margin-top: 20px; max-width: 360px;">The best conversations start with a simple email. Reach out directly and let me know what you are trying to solve.</p>
+    <div style="margin-top: 32px;">
+      <a href="mailto:Shavon.the.Gaddie@gmail.com" class="btn-gold" style="display: inline-block;">Send an Email</a>
     </div>
   </div>
-</div>
+</section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-name">Shavon <span>Gaddie</span></div>
+  <div class="footer-logo">Shavon <em>Gaddie</em></div>
   <div class="footer-copy">&copy; 2026 Shavon Gaddie. All rights reserved.</div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // Form handler
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.form-submit');
-    btn.textContent = 'Message Sent!';
-    btn.style.background = '#A07848';
-    setTimeout(() => {
-      btn.textContent = 'Send Message';
-      btn.style.background = '';
-      e.target.reset();
-    }, 3000);
-  }
+<script>
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx - 4 + 'px';
+  cursor.style.top = my - 4 + 'px';
+});
+function animateRing() {
+  rx += (mx - rx - 16) * 0.12;
+  ry += (my - ry - 16) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+document.querySelectorAll('a, button, .metric-card, .cert-item, .phase-item, .skill-tag').forEach(el => {
+  el.addEventListener('mouseenter', () => { cursor.style.transform = 'scale(2.5)'; ring.style.transform = 'scale(1.5)'; ring.style.borderColor = 'rgba(201,168,124,0.8)'; });
+  el.addEventListener('mouseleave', () => { cursor.style.transform = 'scale(1)'; ring.style.transform = 'scale(1)'; ring.style.borderColor = 'rgba(201,168,124,0.4)'; });
+});
+const phases = document.querySelectorAll('.phase-item');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 100); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.1 });
+phases.forEach(p => observer.observe(p));
+const reveals = document.querySelectorAll('.cert-item, .cs-block, .about-text p');
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } });
+}, { threshold: 0.1 });
+reveals.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(16px)'; el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; revealObs.observe(el); });
 
-  // Nav active state on scroll
-  window.addEve
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.borderBottom = window.scrollY > 50 ? '1px solid rgba(201,168,124,0.1)' : 'none';
+});
+</script>
+</body>
+</html>
