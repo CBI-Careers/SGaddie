@@ -114,6 +114,25 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 28px 60
 .cs-impact-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--rg); margin-bottom: 6px; }
 .cs-impact-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--pale); text-transform: uppercase; }
 
+/* CARE CONSULTING */
+.care-section { padding: 120px 80px; background: var(--dark); position: relative; overflow: hidden; }
+.care-section::before { content: 'CARE'; position: absolute; top: -30px; right: -20px; font-family: 'Playfair Display', serif; font-size: 240px; font-weight: 900; color: rgba(201,168,124,0.03); pointer-events: none; line-height: 1; }
+.care-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.care-text p { font-size: 14px; line-height: 1.9; color: var(--light); margin-bottom: 20px; }
+.care-text strong { color: var(--rg-light); font-weight: 500; }
+.dig-card { background: var(--dark-2); border: 1px solid rgba(201,168,124,0.15); padding: 36px; position: relative; transition: all 0.3s; }
+.dig-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--rg); }
+.dig-card:hover { border-color: rgba(201,168,124,0.35); }
+.dig-eyebrow { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 3px; color: var(--rg); text-transform: uppercase; margin-bottom: 12px; }
+.dig-name { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 14px; }
+.dig-desc { font-size: 13px; line-height: 1.8; color: var(--light); }
+.care-portfolio { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: rgba(201,168,124,0.1); margin-top: 64px; }
+.care-stat { background: var(--dark-2); padding: 32px 20px; text-align: center; transition: all 0.3s; }
+.care-stat:hover { background: var(--dark-3); }
+.care-stat-num { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--rg); margin-bottom: 8px; }
+.care-stat-label { font-family: 'DM Mono', monospace; font-size: 8.5px; letter-spacing: 2px; color: var(--pale); text-transform: uppercase; line-height: 1.6; }
+.care-note { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: rgba(200,188,176,0.4); text-transform: uppercase; text-align: center; margin-top: 20px; }
+
 /* SKILLS */
 .skills-section { padding: 120px 80px; background: var(--dark-3); }
 .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 48px; }
@@ -149,6 +168,9 @@ footer { padding: 40px 80px; background: var(--dark-2); display: flex; justify-c
   .hero-left, .hero-right { padding: 120px 30px 60px; }
   .about, .contact { grid-template-columns: 1fr; gap: 60px; padding: 80px 30px; }
   .dis-section, .case-study, .skills-section { padding: 80px 30px; }
+  .care-section { padding: 80px 30px; }
+  .care-grid { grid-template-columns: 1fr; gap: 40px; }
+  .care-portfolio { grid-template-columns: 1fr 1fr; }
   .cs-grid { grid-template-columns: 1fr; }
   .cs-impact { grid-template-columns: 1fr; gap: 24px; padding: 32px; }
   footer { flex-direction: column; gap: 16px; padding: 30px; text-align: center; }
@@ -168,6 +190,7 @@ footer { padding: 40px 80px; background: var(--dark-2); display: flex; justify-c
     <li><a href="#about">About</a></li>
     <li><a href="#dis">Methodology</a></li>
     <li><a href="#case-study">Case Study</a></li>
+    <li><a href="#care">Consulting</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -351,6 +374,49 @@ footer { padding: 40px 80px; background: var(--dark-2); display: flex; justify-c
       <div class="cs-impact-label">Appeal Overturn Rate on Reviewed Accounts</div>
     </div>
   </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- CARE CONSULTING -->
+<section class="care-section" id="care">
+  <div class="care-grid">
+    <div>
+      <div class="section-label">Consulting Practice</div>
+      <h2 class="section-title">CARE — Clinical Appeals<br>and <em>Revenue Engineering</em></h2>
+      <div class="care-text">
+        <p>CARE is an independent healthcare revenue cycle consulting practice built on a simple conviction: <strong>every denial is a system problem waiting to be solved.</strong></p>
+        <p>The practice partners with health systems on clinical appeals strategy, denial prevention architecture, revenue engineering, and AI governance — delivering charter-based root cause analysis, financial impact quantification, and executive-level strategy that moves initiatives from stalled to implemented.</p>
+      </div>
+    </div>
+    <div>
+      <div class="dig-card">
+        <div class="dig-eyebrow">Specialty Practice</div>
+        <div class="dig-name">Denial Intelligence Group</div>
+        <p class="dig-desc">The denial prevention and revenue integrity practice of CARE. Denial Intelligence Group applies The Denial Intelligence System — the signature seven-phase methodology featured above — to account-level investigation, root cause classification, and prevention strategy across every denial category, at portfolio scale.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="care-portfolio">
+    <div class="care-stat">
+      <div class="care-stat-num">$1.99B</div>
+      <div class="care-stat-label">Denied Claims Analyzed in a Single Engagement</div>
+    </div>
+    <div class="care-stat">
+      <div class="care-stat-num">$407M</div>
+      <div class="care-stat-label">Prevention Opportunity Presented to VP Leadership</div>
+    </div>
+    <div class="care-stat">
+      <div class="care-stat-num">$257M</div>
+      <div class="care-stat-label">Eligibility Opportunity Across Six Initiatives</div>
+    </div>
+    <div class="care-stat">
+      <div class="care-stat-num">$26M</div>
+      <div class="care-stat-label">Medicare Initiative Fully Implemented and Monitoring</div>
+    </div>
+  </div>
+  <div class="care-note">◆ Client engagements are confidential and presented anonymized ◆</div>
 </section>
 
 <div class="full-divider"></div>
